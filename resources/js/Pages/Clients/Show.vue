@@ -16,7 +16,7 @@ const props = defineProps({
   <AppLayout title="Show Client">
     <template #header>
       <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        Show Client: {{ client.name }}
+        Mostra cliente: {{ client.name }}
       </h2>
     </template>
 
@@ -75,5 +75,5 @@ const props = defineProps({
         </ul>
       </div>
     </div>
-  </AppLayout>
-</template>
+  </AppLayout> 
+</template> 

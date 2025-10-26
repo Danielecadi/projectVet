@@ -26,7 +26,7 @@ use App\Http\Controllers\GalleryController;
 */
 
 Route::get('/', function () {
-    return redirect()->route('dashboard');
+    return redirect()->route('clients');
 });
 
 Route::middleware([
@@ -34,7 +34,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/clients', [DashboardController::class, 'index'])->name('clients');
 
     // Clients
     Route::get('/clients', [ClientController::class, 'index'])->name('clients');

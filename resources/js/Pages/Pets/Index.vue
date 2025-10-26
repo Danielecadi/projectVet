@@ -34,7 +34,7 @@ const fetchPets = async (page = 1) => {
 const handleSearch = async ({ search, keywords }) => {
     if (!keywords) {
         // Show a toast error
-        toast.warning('Enter a search term')
+        toast.warning('Per favore inserisci un termine di ricerca.')
     } else {
         // If not empty, perform the search
         pets.value = await search('/pets/search');
@@ -67,21 +67,21 @@ const togglePetSelection = (PetId) => {
 
 const deletePet = (id) => {
     Swal.fire({
-        title: 'Delete Pet?',
-        text: 'Are you sure you want to delete this pet?',
+        title: 'Cancellare questo Animale?',
+        text: 'Sei sicuro di voler cancellare questo animale?',
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'Yes, delete it',
-        cancelButtonText: 'No, keep it'
+        confirmButtonText: 'Sì, cancellalo',
+        cancelButtonText: 'No, mantienilo'
     }).then((result) => {
         if (result.isConfirmed) {
             axios.delete(`/pets/${id}`)
                 .then(response => {
-                    Swal.fire('Deleted!', response.data.message, 'success');
+                    Swal.fire('Cancellato!', response.data.message, 'success');
                     fetchPets();
                 })
                 .catch(error => {
-                    Swal.fire('Error!', error.response.data.message, 'error');
+                    Swal.fire('Errore!', error.response.data.message, 'error');
                 });
         }
     });
@@ -122,7 +122,7 @@ const handleBulkDelete = () => {
     <AppLayout title="Pets">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Pets
+                Animali
             </h2>
         </template>
 
@@ -242,11 +242,6 @@ const handleBulkDelete = () => {
                                     <td class="px-4 py-1 lg:py-3">{{ pet.breed && pet.breed.name ? pet.breed.name : '-' }}</td>
                                     <td class="px-4 py-1 lg:py-3">{{ moment(pet.created_at).format('MMMM Do, YYYY') }}</td>
                                     <td class="px-4 py-4 lg:py-3 flex items-center justify-start lg:justify-end">
-                                        <Link :href="route('pets.show', { slug: pet.slug })"
-                                            class="inline-flex items-center p-0.5 text-sm font-medium text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:text-gray-400 dark:hover:text-gray-100">
-                                        <EyeIcon class="w-5 h-5 mr-1" />
-                                        <span class="sr-only">View</span>
-                                        </Link>
                                         <Link :href="route('pets.edit', { slug: pet.slug })"
                                             class="inline-flex items-center p-0.5 text-sm font-medium text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:text-gray-400 dark:hover:text-gray-100">
                                         <PencilSquareIcon class="w-5 h-5 text-indigo-500 hover:text-indigo-800 mr-1" />

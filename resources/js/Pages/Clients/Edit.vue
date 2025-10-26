@@ -40,7 +40,7 @@ const submitForm = async () => {
   validateForm(updateForm.value);
 
   if (Object.keys(errors.value).length > 0) {
-    toast.error("Please correct the errors in the form.");
+    toast.error("Per favore correggi gli errori.");
     isSubmitting.value = false;
     return;
   }
@@ -61,7 +61,7 @@ onMounted(() => {
   <AppLayout title="Add Client">
     <template #header>
       <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        Edit Client
+        Modifica Cliente
       </h2>
     </template>
 
@@ -108,14 +108,14 @@ onMounted(() => {
               <textarea v-model="updateForm.notes" name="notes" id="notes" rows="8"
                 class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500"
                 :class="errors.notes ? 'border-red-500' : ''"
-                placeholder="Your notes here..."></textarea>
+                placeholder="Le tue note"></textarea>
               <span class="text-red-500 text-xs">{{ errors.notes }}</span>
             </div>
           </div>
 
           <button type="submit"
             class="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-center text-white bg-indigo-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-indigo-900 hover:bg-indigo-800 disabled:bg-indigo-300 disabled:cursor-not-allowed">
-            Update Client
+            Aggiorna Cliente
           </button>
           
         </form>

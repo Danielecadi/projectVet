@@ -13,39 +13,39 @@ export const validateForm = (form) => {
 
     // Validate title (trimming whitespace)
     if (!form.title.trim()) {
-        errors.value.title = 'This field is required';
+        errors.value.title = 'Questo campo è obbligatorio';
     } else {
         delete errors.value.title;
     }
 
     // Validate client_id (checking if it's an integer)
     if (!form.client_id) {
-        errors.value.client_id = 'This field is required';
+        errors.value.client_id = 'Questo campo è obbligatorio';
     } else if (typeof form.client_id !== 'number') {
-        errors.value.client_id = 'This field must be an integer';
+        errors.value.client_id = 'Questo campo deve essere un numero intero';
     } else {
         delete errors.value.client_id;
     }
 
     // Validate start_time (checking if it's a valid date)
     if (!form.start_time || isNaN(Date.parse(form.start_time))) {
-        errors.value.start_time = 'This field is required';
+        errors.value.start_time = 'Questo campo è obbligatorio';
     } else {
         delete errors.value.start_time;
     }
 
     // Validate end_time (checking if it's a valid date and after start_time)
     if (!form.end_time || isNaN(Date.parse(form.end_time))) {
-        errors.value.end_time = 'This field is required';
+        errors.value.end_time = 'Questo campo è obbligatorio';
     } else if (Date.parse(form.end_time) <= Date.parse(form.start_time)) {
-        errors.value.end_time = 'This field must be a date after start date';
+        errors.value.end_time = 'La data di fine deve essere successiva alla data di inizio';
     } else {
         delete errors.value.end_time;
     }
 
     // Validate description (trimming whitespace if it's a string)
     if (form.description && typeof form.description === 'string' && !form.description.trim()) {
-        errors.value.description = 'This field cannot be only spaces';
+        errors.value.description = 'Questo campo è obbligatorio';
     } else {
         delete errors.value.description;
     }

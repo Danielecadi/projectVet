@@ -62,7 +62,7 @@ const submitEditForm = async () => {
 	validateForm(editForm);
 
 	if (Object.keys(errors.value).length > 0) {
-		toast.error("Please correct the errors in the form.");
+		toast.error("Per favore correggi gli errori.");
 		return;
 	}
 
@@ -78,14 +78,14 @@ const submitEditForm = async () => {
 	props.fetchAllAppointments();
 	closeEditModal()
 	resetForm()
-	toast.success("Appointment created successfully!");
+	toast.success("Appuntamento creato!");
 };
 
 const deleteEvent = async (id) => {
     await axios.delete(`/appointments/${id}`);
     props.fetchAllAppointments();
     closeEditModal();
-    toast.success("Appointment deleted successfully!");
+    toast.success("Apputamento cancellato!");
 };
 
 const setClientId = () => {
@@ -194,7 +194,7 @@ onMounted(async () => {
                         d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
                         clip-rule="evenodd"></path>
                     </svg>
-                    Update Event
+                    Aggiorna appuntamento
                   </button>
                 </div>
               </form>

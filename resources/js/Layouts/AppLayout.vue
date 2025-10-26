@@ -112,20 +112,13 @@ const logout = () => {
 						</div>
 					</form>
 					<ul class="space-y-2">
-						<li>
-							<NavLink :href="route('dashboard')" :active="route().current('dashboard')"
-								class="flex items-center p-2 text-base font-medium text-gray-500 hover:text-gray-100 rounded-lg dark:text-white hover:bg-gray-800 dark:hover:bg-gray-700 group">
-								<Squares2X2Icon
-									class="w-6 h-6 transition duration-75 dark:text-gray-400 group-hover:text-gray-100 dark:group-hover:text-white" />
-								<span class="ml-3">Dashboard</span>
-							</NavLink>
-						</li>
+						
 						<li>
 							<NavLink :href="route('clients')" :active="route().current('clients')"
 								class="flex items-center p-2 text-base font-medium text-gray-500 hover:text-gray-100 rounded-lg dark:text-white hover:bg-gray-800 dark:hover:bg-gray-700 group">
 								<UsersIcon
 									class="w-6 h-6  transition duration-75 dark:text-gray-400 group-hover:text-gray-100 dark:group-hover:text-white" />
-								<span class="ml-3">Clients</span>
+								<span class="ml-3">Clienti</span>
 							</NavLink>
 						</li>
 						<li>
@@ -133,7 +126,7 @@ const logout = () => {
 								class="flex items-center p-2 text-base font-medium text-gray-500 hover:text-gray-100 rounded-lg dark:text-white hover:bg-gray-800 dark:hover:bg-gray-700 group">
 								<BoltIcon
 									class="w-6 h-6transition duration-75 dark:text-gray-400 group-hover:text-gray-100 dark:group-hover:text-white" />
-								<span class="ml-3">Pets</span>
+								<span class="ml-3">Animali</span>
 							</NavLink>
 						</li>
 						<li>
@@ -141,7 +134,7 @@ const logout = () => {
 								class="flex items-center p-2 text-base font-medium text-gray-500 hover:text-gray-100 rounded-lg dark:text-white hover:bg-gray-800 dark:hover:bg-gray-700 group">
 								<CalendarDaysIcon
 									class="w-6 h-6 transition duration-75 dark:text-gray-400 group-hover:text-gray-100 dark:group-hover:text-white" />
-								<span class="ml-3">Appointments</span>
+								<span class="ml-3">Appuntamento</span>
 							</NavLink>
 						</li>
 						<li>
@@ -149,7 +142,7 @@ const logout = () => {
 								class="flex items-center p-2 text-base font-medium text-gray-500 hover:text-gray-100 rounded-lg dark:text-white hover:bg-gray-800 dark:hover:bg-gray-700 group">
 								<BeakerIcon
 									class="w-6 h-6 transition duration-75 dark:text-gray-400 group-hover:text-gray-100 dark:group-hover:text-white" />
-								<span class="ml-3">Inventory</span>
+								<span class="ml-3">Inventario</span>
 							</NavLink>
 						</li>
 					</ul>

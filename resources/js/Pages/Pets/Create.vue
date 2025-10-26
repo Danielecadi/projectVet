@@ -198,7 +198,7 @@ const fetchBreeds = async (speciesId) => {
 				<div class="grid grid-cols-12 gap-5">
 
 					<div class="col-span-6">
-						<label for="name" class="mb-2 block text-sm font-medium text-gray-700">Name</label>
+						<label for="name" class="mb-2 block text-sm font-medium text-gray-700">Nome</label>
 						<input v-model="createForm.name" type="text" id="name"
 							class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-700 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 placeholder:text-sm"
 							:class="{ 'border-red-500 focus:border-red-500 focus:ring-red-500': errors.name }" placeholder="Pet Name" />
@@ -234,7 +234,7 @@ const fetchBreeds = async (speciesId) => {
 						</div>
 					</div>
 					<div class="col-span-12 sm:col-span-6">
-						<label for="breed" class="mb-2 block text-sm font-medium text-gray-700">Breed</label>
+						<label for="breed" class="mb-2 block text-sm font-medium text-gray-700">Razza</label>
 						<VueMultiselect v-model="selectedBreed" :options="matchingBreeds" :multiple="false" :clear-on-select="true"
 							placeholder="Type to search" label="name" track-by="id">
 							<template #noResult1>

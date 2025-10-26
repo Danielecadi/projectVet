@@ -30,11 +30,6 @@ class ClientController extends Controller
         return Inertia::render('Clients/Create');
     }
 
-    public function show($slug): \Inertia\Response
-    {
-        $client = $this->clientService->findClientBySlug($slug);
-        return Inertia::render('Clients/Show', ['client' => $client]);
-    }
 
     public function edit($slug): \Inertia\Response
     {
